@@ -1,4 +1,4 @@
-﻿#include <iostream>
+﻿#include#include <iostream>
 // #include <string>
 
 using namespace std;
@@ -43,12 +43,12 @@ public:
             fighter2.health -= fighter1.damagePerAttack;
             if (fighter1.health <= 0)
             {
-                cout << "Winner - " << fighter1.name << endl;
+                cout << "Winner- " << fighter1.name << endl;
                 break;
             }
-            else if (fighter2.health <= 0)
+            if (fighter2.health <= 0) //else does not match the given condition
             {
-                cout << "Winner - " << fighter2.name << endl;
+                cout << "Winner- " << fighter2.name << endl;
                 break;
             }
         }
@@ -58,7 +58,13 @@ public:
 int main()
 {
     Fighter man("Slavko", 10, 2);
+    //main is directly related to the class
+    //and is executed thanks to it, if you change the name,
+    //the code simply will not compile, be more careful when reading the code
     Fighter man2("Slavko2", 5, 4);
+    //main is directly related to the class
+    //and is executed thanks to it, if you change the name,
+    //the code simply will not compile, be more careful when reading the code
 
     Fight fight;
     fight.declareWinner(man, man2);
